@@ -34,7 +34,7 @@ MEDIA_URL = ''
 # Absolute path to the directory that holds static files.
 # Example: "/home/media/media.lawrence.com/static/"
 SETTINGS_DIR = os.path.dirname(__file__)
-PROJECT_DIR = os.path.abspath(os.path.join(SETTINGS_DIR))
+PROJECT_DIR = os.path.abspath(os.path.join(SETTINGS_DIR, os.pardir))
 
 STATIC_ROOT = os.path.join(PROJECT_DIR, 'staticfiles')
 
