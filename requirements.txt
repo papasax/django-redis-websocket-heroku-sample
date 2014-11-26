@@ -1,0 +1,11 @@
+Django==1.7
+dj-redis-url==0.1.4
+django-redis-sessions-fork==0.6.2
+django-websocket-redis==0.4.2
+gevent==1.0.1
+greenlet==0.4.5
+hiredis==0.1.5
+redis==2.10.3
+six==1.8.0
+uWSGI==2.0.8
+wsgiref==0.1.2
