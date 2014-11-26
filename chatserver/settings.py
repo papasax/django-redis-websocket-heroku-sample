@@ -5,11 +5,15 @@ import dj_redis_url
 
 DEBUG = True
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'database.sqlite',
+#     },
+# }
+import dj_database_url
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'database.sqlite',
-    },
+    'default': dj_database_url.config()
 }
 
 SITE_ID = 1
