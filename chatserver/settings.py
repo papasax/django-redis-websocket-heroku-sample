@@ -33,7 +33,10 @@ MEDIA_URL = ''
 
 # Absolute path to the directory that holds static files.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.environ.get('DJANGO_STATIC_ROOT', '')
+SETTINGS_DIR = os.path.dirname(__file__)
+PROJECT_DIR = os.path.abspath(os.path.join(SETTINGS_DIR, os.pardir, os.pardir))
+
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'staticfiles')
 
 # URL that handles the static files served from STATIC_ROOT.
 # Example: "http://media.lawrence.com/static/"
