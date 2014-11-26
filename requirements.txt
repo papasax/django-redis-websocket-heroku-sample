@@ -1,4 +1,5 @@
 Django==1.7
+dj-database-url==0.3.0
 dj-redis-url==0.1.4
 django-redis-sessions-fork==0.6.2
 django-websocket-redis==0.4.2
