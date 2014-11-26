@@ -39,7 +39,7 @@ SESSION_ENGINE = 'redis_sessions_fork.session'
 
 SESSION_REDIS_PREFIX = 'session'
 
-SESSION_REDIS_URL = os.environ.get['REDISCLOUD_URL']
+SESSION_REDIS_URL = os.environ.get('REDISCLOUD_URL')
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
