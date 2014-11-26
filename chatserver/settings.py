@@ -1,5 +1,6 @@
 # Django settings for unit test project.
 import os
+import dj_redis_url
 
 
 DEBUG = True
@@ -37,6 +38,8 @@ STATIC_URL = '/static/'
 SESSION_ENGINE = 'redis_sessions_fork.session'
 
 SESSION_REDIS_PREFIX = 'session'
+
+SESSION_REDIS_URL = dj_redis_url.parse(REDISCLOUD_URL)
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
