@@ -2,7 +2,7 @@
 
 import os
 if not os.environ.has_key('DJANGO_SETTINGS_MODULE'):
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'chatserver.settings.prod')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'chatserver.settings')
 from django.conf import settings
 from django.core.wsgi import get_wsgi_application
 from ws4redis.uwsgi_runserver import uWSGIWebsocketServer
