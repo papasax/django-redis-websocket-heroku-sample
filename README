@@ -11,3 +11,5 @@ On heroku install a postgres database and a herokuredis database
 git push heroku master
 
 And that's it.
+
+It's there : https://django-redis-websocket-heroku.herokuapp.com/chat/
