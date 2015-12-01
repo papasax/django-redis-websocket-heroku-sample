@@ -49,8 +49,8 @@ SESSION_ENGINE = 'redis_sessions_fork.session'
 SESSION_REDIS_PREFIX = 'session'
 
 try:
-    REDISCLOUD_URL = os.environ['REDISCLOUD_URL']
-    CAPITAL_WS4REDIS_CONNECTION = dj_redis_url.parse(REDISCLOUD_URL)
+    REDIS_URL = os.environ['REDIS_URL']
+    CAPITAL_WS4REDIS_CONNECTION = dj_redis_url.parse(REDIS_URL)
     WS4REDIS_CONNECTION = {
         'host': CAPITAL_WS4REDIS_CONNECTION['HOST'],
         'port': CAPITAL_WS4REDIS_CONNECTION['PORT'],
