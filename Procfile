@@ -1,2 +1,2 @@
-web: bin/start-nginx uwsgi --emperor vassals
+web: uwsgi --ini uwsgi-heroku-emperor.ini
 

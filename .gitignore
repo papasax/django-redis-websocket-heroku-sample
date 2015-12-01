@@ -1,11 +1,14 @@
 *.pyc
 *.egg-info
 *.coverage
-*.sqlite
+*.sqlite3
 *~
 .tmp*
+.env
 build
 docs/_build
 dist
 htmlcov
 /node_modules/
+.idea
+

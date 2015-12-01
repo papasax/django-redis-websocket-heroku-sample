@@ -1,19 +1,25 @@
 # Django settings for unit test project.
 import os
 import dj_redis_url
+import dj_database_url
+from os.path import join, dirname
+from dotenv import load_dotenv
 
 
 DEBUG = True
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': 'database.sqlite',
-#     },
-# }
-import dj_database_url
+# Absolute path to the directory that holds static files.
+# Example: "/home/media/media.lawrence.com/static/"
+SETTINGS_DIR = os.path.dirname(__file__)
+PROJECT_DIR = os.path.abspath(os.path.join(SETTINGS_DIR, os.pardir))
+
+dotenv_path = join(PROJECT_DIR, '.env')
+load_dotenv(dotenv_path)
+
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': dj_database_url.config(
+        default='sqlite:////{0}'.format(os.path.join(PROJECT_DIR, 'db.sqlite3'))
+    )
 }
 
 SITE_ID = 1
@@ -31,10 +37,6 @@ MEDIA_ROOT = ''
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
 MEDIA_URL = ''
 
-# Absolute path to the directory that holds static files.
-# Example: "/home/media/media.lawrence.com/static/"
-SETTINGS_DIR = os.path.dirname(__file__)
-PROJECT_DIR = os.path.abspath(os.path.join(SETTINGS_DIR, os.pardir))
 
 STATIC_ROOT = os.path.join(PROJECT_DIR, 'staticfiles')
 

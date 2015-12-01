@@ -1,0 +1,15 @@
+Django
+dj-database-url
+dj-redis-url
+django-redis-sessions-fork
+django-websocket-redis
+gevent
+greenlet
+hiredis
+redis
+six
+uWSGI
+whitenoise
+wsgiref
+psycopg2
+python-dotenv
