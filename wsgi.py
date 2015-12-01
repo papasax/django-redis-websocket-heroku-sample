@@ -1,15 +1,16 @@
 # test uWSGI with low traffic:
-# uwsgi --virtualenv /path/to/virtualenv --http :9090 --gevent 100 --http-websockets --module wsgi
+# uwsgi --virtualenv $VIRTUAL_ENV --http :9090 --gevent 100 --http-websockets --module wsgi
 import os
-import sys
-sys.path.insert(0, os.path.abspath('..'))
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'chatserver.settings')
 
 from django.core.wsgi import get_wsgi_application
 from django.conf import settings
 from ws4redis.uwsgi_runserver import uWSGIWebsocketServer
+from whitenoise.django import DjangoWhiteNoise
 
-_django_app = get_wsgi_application()
+application = get_wsgi_application()
+_django_app = DjangoWhiteNoise(application)
 _websocket_app = uWSGIWebsocketServer()
 
 
