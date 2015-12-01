@@ -59,9 +59,10 @@ try:
         'db': CAPITAL_WS4REDIS_CONNECTION['DB'],
         'password': CAPITAL_WS4REDIS_CONNECTION['PASSWORD'],
     }
+    SESSION_REDIS_URL=REDIS_URL
 
 except:
-    print "REDISCLOUD_URL was not found in env"
+    print "REDIS_URL was not found in env"
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
