@@ -5,9 +5,6 @@ import dj_database_url
 from os.path import join, dirname
 from dotenv import load_dotenv
 
-
-DEBUG = True
-
 # Absolute path to the directory that holds static files.
 # Example: "/home/media/media.lawrence.com/static/"
 SETTINGS_DIR = os.path.dirname(__file__)
@@ -15,6 +12,11 @@ PROJECT_DIR = os.path.abspath(os.path.join(SETTINGS_DIR, os.pardir))
 
 dotenv_path = join(PROJECT_DIR, '.env')
 load_dotenv(dotenv_path)
+
+try:
+    DEBUG = os.environ['DEBUG']
+except:
+    DEBUG = False
 
 DATABASES = {
     'default': dj_database_url.config(
